@@ -10,3 +10,127 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.traffic-light-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f4f6;
+    position: relative; 
+}
+
+.traffic-light {
+    width: 80px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2; 
+    border: 2px solid #ffcc00; 
+    box-sizing: border-box;
+}
+
+.light {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #555;
+    opacity: 0.3; 
+    transition: opacity 0.5s ease, box-shadow 0.5s ease; 
+}
+
+.light.active {
+    opacity: 1; 
+}
+
+.light.red.active {
+    background-color: red;
+    box-shadow: 0 0 20px 10px rgba(255, 0, 0, 0.7); 
+}
+
+.light.yellow.active {
+    background-color: yellow;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.7); 
+}
+
+.light.green.active {
+    background-color: green;
+    box-shadow: 0 0 20px 10px rgba(0, 255, 0, 0.7); 
+}
+
+.light.purple.active {
+    background-color: purple;
+    box-shadow: 0 0 20px 10px rgba(128, 0, 128, 0.7); 
+}
+
+.button-container {
+    display: flex;
+    gap: 150px;
+    margin-top: 20px; 
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border:2px solid #ffcc00;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+
+.traffic-light-base {
+    width: 100px; 
+    height: 20px; 
+    background-color: #333;
+    position: absolute;
+    bottom: 380px; 
+    z-index: 1; 
+    border-radius: 5px; 
+}
+
+
+.traffic-light-pole {
+    width: 20px; 
+    height: 100px; 
+    background-color: #333;
+    position: absolute;
+    bottom: 800px; 
+    z-index: 1;
+    
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #ffcc00, 
+        #ffcc00 8px, 
+        transparent 10px, 
+        transparent 30px 
+    );
+}
+
+
+.traffic-light-top-tube {
+    width: 20px; 
+    height: 200px; 
+    background-color: #333; 
+    position: absolute;
+    top: 710px; 
+
+    
+    background-image: repeating-linear-gradient(
+        to bottom,
+        #ffcc00, 
+        #ffcc00 8px, 
+        transparent 10px, 
+        transparent 30px
+    );
+}
